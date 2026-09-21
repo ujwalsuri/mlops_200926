@@ -3,7 +3,7 @@ import pandas as pd
 # for data preprocessing and pipeline creation
 from sklearn.model_selection import train_test_split
 
-df = pd.read_csv("mlops/data/tourism/csv")
+df = pd.read_csv("mlops/data/tourism.csv")
 print("Dataset loaded successfully.")
 
 #drop the CustomerID and unnamed columns from data
@@ -40,7 +40,7 @@ Xtrain, Xtest, ytrain, ytest = train_test_split(
     X, y,              # Predictors (X) and target variable (y)
     test_size=0.2,     # 20% of the data is reserved for testing
     random_state=42,   # Ensures reproducibility by setting a fixed random seed
-    stratify=y,        # keeps the (imbalanced) churn ratio consistent across splits
+    stratify=y,        # keeps the (imbalanced) ratio consistent across splits
 )
 
 #Save split data to individual csvs
