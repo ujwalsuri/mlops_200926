@@ -21,7 +21,7 @@ Occupation = st.selectbox("Occupation (Salaried/Free Lancer/Small Business/Large
 Gender = st.selectbox("Gender (Male/Female)", ["Male", "Female"])
 NumberOfPersonVisiting = st.number_input("Number of Persons Visiting ", min_value=1, max_value=20, value=3)
 NumberOfFollowups = st.number_input("Number of Followups", min_value=0, max_value=20, value=1)
-ProductPitched = st.selectbox("Product Pitched", ["Basic, Deluxe", "King", "Standard", "Super Deluxe"])
+ProductPitched = st.selectbox("Product Pitched", ["Basic", "Deluxe", "King", "Standard", "Super Deluxe"])
 PreferredPropertyStar = st.selectbox("Preferred Property Star (1/2/3/4/5)", ["1", "2", "3", "4", "5"])
 MaritalStatus = st.selectbox("Marital Status", ["Single", "Married", "Divorced", "UnMarried"])
 NumberOfTrips = st.number_input("Number of Trips", min_value=0, max_value=50, value=1)
