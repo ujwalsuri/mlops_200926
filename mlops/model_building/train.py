@@ -26,9 +26,6 @@ numeric_features = ["Age", "NumberOfTrips", "NumberOfPersonVisiting", "NumberOfC
 # List of categorical features in the dataset
 categorical_features = ["TypeofContact", "CityTier", "Occupation", "Gender", "ProductPitched", "PreferredPropertyStar", "MaritalStatus", "Passport", "PitchSatisfactionScore", "OwnCar", "Designation"]
 
-# List of categorical features in the dataset
-categorical_features = ["Geography"]
-
 # Set the class weight to handle class imbalance
 class_weight = ytrain.value_counts()[0] / ytrain.value_counts()[1]
 class_weight
