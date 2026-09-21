@@ -19,5 +19,5 @@ if missing:
 print("Dataset registered successfully.")
 print(f"Rows: {df.shape[0]}, Columns: {df.shape[1]}")
 print("Columns:", list(df.columns))
-print("Churn (Exited) distribution:")
-print(df["Exited"].value_counts())
+print("Package Subscription (ProdTaken) distribution:")
+print(df["ProdTaken"].value_counts())
