@@ -34,16 +34,23 @@ MonthlyIncome = st.number_input("Monthly Income", min_value=100, max_value=10000
 
 # Convert categorical inputs to match model training
 input_data = pd.DataFrame([{
+    "Age":Age,
     "TypeofContact":TypeOfEnq, 
     "CityTier":CityTier,
+    "DurationOfPitch":Duration,
     "Occupation":Occupation,
     "Gender":Gender,
+    "NumberOfPersonVisiting":NumberOfPersonVisiting,
+    "NumberOfFollowups":NumberOfFollowups,
     "ProductPitched":ProductPitched, 
     "PreferredPropertyStar":PreferredPropertyStar,
     "MaritalStatus":MaritalStatus,
+    "NumberOfTrips":NumberOfTrips,
     "Passport":Passport, 
     "PitchSatisfactionScore": PitchSatisfactionScore,
     "OwnCar":OwnCar,
+    "NumberOfChildrenVisiting":NumberOfChildrenVisiting,
+    "MonthlyIncome":MonthlyIncome,
     "Designation":Designation
 }])
 
