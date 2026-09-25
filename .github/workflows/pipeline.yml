@@ -1,4 +1,4 @@
-name: MLOps CI/CD Pipeline
+name: Tourism Project MLOps CI/CD Pipeline
 
 on:
   push:
