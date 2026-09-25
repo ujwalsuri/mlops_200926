@@ -29,29 +29,29 @@ Passport = st.selectbox("Passport (Yes = 1/No = 0)", ["1", "0"])
 PitchSatisfactionScore = st.selectbox("Pitch Satisfaction Score (1/2/3/4/5)", ["1", "2", "3", "4", "5"])
 OwnCar = st.selectbox("Own Car (Yes = 1/No = 0)", ["1", "0"])
 NumberOfChildrenVisiting = st.number_input("Number of Children Visiting", min_value=0, max_value=10, value=0)
-Designation = st.selectbox("Designation (Executive/Manager/Senior Manager/AVP/VP", ["Executive", "Manager", "Senior Manager", "AVP", "VP"])
+#Designation = st.selectbox("Designation (Executive/Manager/Senior Manager/AVP/VP", ["Executive", "Manager", "Senior Manager", "AVP", "VP"])
 MonthlyIncome = st.number_input("Monthly Income", min_value=100, max_value=100000, value=5000)
 
 # Convert categorical inputs to match model training
 input_data = pd.DataFrame([{
     "Age":Age,
-    "TypeofContact":TypeOfEnq, 
+    "TypeofContact":TypeOfEnq,
     "CityTier":CityTier,
     "DurationOfPitch":Duration,
     "Occupation":Occupation,
     "Gender":Gender,
     "NumberOfPersonVisiting":NumberOfPersonVisiting,
     "NumberOfFollowups":NumberOfFollowups,
-    "ProductPitched":ProductPitched, 
+    "ProductPitched":ProductPitched,
     "PreferredPropertyStar":PreferredPropertyStar,
     "MaritalStatus":MaritalStatus,
     "NumberOfTrips":NumberOfTrips,
-    "Passport":Passport, 
+    "Passport":Passport,
     "PitchSatisfactionScore": PitchSatisfactionScore,
     "OwnCar":OwnCar,
     "NumberOfChildrenVisiting":NumberOfChildrenVisiting,
     "MonthlyIncome":MonthlyIncome,
-    "Designation":Designation
+    #"Designation":Designation
 }])
 
 # Set the classification threshold
