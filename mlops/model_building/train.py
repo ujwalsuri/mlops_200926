@@ -23,8 +23,8 @@ ytest  = pd.read_csv("ytest.csv").squeeze()
 # List of numerical features in the dataset
 numeric_features = ["Age", "NumberOfTrips", "NumberOfPersonVisiting", "NumberOfChildrenVisiting", "DurationOfPitch", "MonthlyIncome", "NumberOfFollowups"]
 
-# List of categorical features in the dataset
-categorical_features = ["TypeofContact", "CityTier", "Occupation", "Gender", "ProductPitched", "PreferredPropertyStar", "MaritalStatus", "Passport", "PitchSatisfactionScore", "OwnCar", "Designation"]
+# List of categorical features in the dataset excluding Designation
+categorical_features = ["TypeofContact", "CityTier", "Occupation", "Gender", "ProductPitched", "PreferredPropertyStar", "MaritalStatus", "Passport", "PitchSatisfactionScore", "OwnCar"]
 
 # Set the class weight to handle class imbalance
 class_weight = ytrain.value_counts()[0] / ytrain.value_counts()[1]
