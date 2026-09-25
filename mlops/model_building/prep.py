@@ -6,19 +6,27 @@ from sklearn.model_selection import train_test_split
 df = pd.read_csv("mlops/data/tourism.csv")
 print("Dataset loaded successfully.")
 
-#drop the CustomerID and unnamed columns from data
+#drop the CustomerID and unnamed columns from data which are unnecessary
 data = df.drop(columns=['CustomerID'])
 data.drop("Unnamed: 0", axis=1, inplace=True)
 print("No of columns after dropping unnecessary columns: ")
 len(data.columns)
 
+#Data corrections:- replace 'Fe Male' with 'Female' and 'Unmarried' with 'Single'
+data['Gender'] = data['Gender'].replace({'Fe Male': 'Female'})
+data['MaritalStatus'] = data['MaritalStatus'].replace({'Unmarried': 'Single'})
+
 print("No of Duplicate/Identical rows in the data:-")
 data.duplicated().sum()
 
+#drop duplicate rows
 data = data.drop_duplicates()
 
 print("No of rows after dropping duplicates: ")
 len(data)
+
+#drop Designation column as it is perfectly correlated with ProductPitched in current data
+data = data.drop(columns=['Designation'])
 
 # Define the target variable for the classification task
 target = "ProdTaken"
@@ -27,7 +35,7 @@ target = "ProdTaken"
 numeric_features = ["Age", "NumberOfTrips", "NumberOfPersonVisiting", "NumberOfChildrenVisiting", "DurationOfPitch", "MonthlyIncome", "NumberOfFollowups"]
 
 # List of categorical features in the dataset
-categorical_features = ["TypeofContact", "CityTier", "Occupation", "Gender", "ProductPitched", "PreferredPropertyStar", "MaritalStatus", "Passport", "PitchSatisfactionScore", "OwnCar", "Designation"]
+categorical_features = ["TypeofContact", "CityTier", "Occupation", "Gender", "ProductPitched", "PreferredPropertyStar", "MaritalStatus", "Passport", "PitchSatisfactionScore", "OwnCar"]
 
 # Define predictor matrix (X) using selected numeric and categorical features
 X = df[numeric_features + categorical_features]
